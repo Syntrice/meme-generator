@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+:root {
+    --accent-200:#A626D3;
+    --accent-100: #672280;
+    --text-400: #FFFFFF;
+    --text-300: #D1D5DB;
+    --text-200: #6B7280;
+    --text-100: #374151;
+}
+
+@theme inline {
+    --color-accent-200: var(--accent-200);
+    --color-accent-100: var(--accent-100);
+    --color-text-400: var(--text-400);
+    --color-text-300: var(--text-300);
+    --color-text-200: var(--text-200);
+    --color-text-100: var(--text-100);
+}
+
+.gradient {
+    background: linear-gradient(to right,var(--accent-100),var(--accent-200));
+}
