@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root {
-    --accent-200:#A626D3;
+    --accent-300: #bb45e6;
+    --accent-200: #A626D3;
     --accent-100: #672280;
     --text-400: #FFFFFF;
     --text-300: #D1D5DB;
@@ -10,6 +11,7 @@
 }
 
 @theme inline {
+    --color-accent-300: var(--accent-300);
     --color-accent-200: var(--accent-200);
     --color-accent-100: var(--accent-100);
     --color-text-400: var(--text-400);
@@ -20,4 +22,12 @@
 
 .gradient {
     background: linear-gradient(to right,var(--accent-100),var(--accent-200));
+}
+
+.text-input {
+    @apply border-1 rounded-md border-text-300 text-text-200 p-2 block w-full;
+}
+
+.wrapper {
+    @apply max-w-3xl m-auto;
 }
