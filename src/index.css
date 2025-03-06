@@ -1,48 +1,46 @@
 @import "tailwindcss";
 
-:root {
-    --accent-300: #bb45e6;
-    --accent-200: #A626D3;
-    --accent-100: #672280;
-    --text-400: #FFFFFF;
-    --text-300: #D1D5DB;
-    --text-200: #6B7280;
-    --text-100: #374151;
+@theme {
+    --color-accent-300: #bb45e6;
+    --color-accent-200: #A626D3;
+    --color-accent-100: #672280;
+    --color-light-400: #FFFFFF;
+    --color-light-300: #D1D5DB;
+    --color-light-200: #6B7280;
+    --color-light-100: #374151;
 }
 
-@theme inline {
-    --color-accent-300: var(--accent-300);
-    --color-accent-200: var(--accent-200);
-    --color-accent-100: var(--accent-100);
-    --color-text-400: var(--text-400);
-    --color-text-300: var(--text-300);
-    --color-text-200: var(--text-200);
-    --color-text-100: var(--text-100);
+@layer utilities {
+    .gradient {
+        background: linear-gradient(to right,var(--color-accent-100),var(--color-accent-200));
+    }
 }
 
-.gradient {
-    background: linear-gradient(to right,var(--accent-100),var(--accent-200));
+@layer components {
+    
+    
+    .text-input {
+        @apply border-1 rounded-md border-light-300 text-light-200 p-2 block w-full;
+    }
+    
+    .wrapper {
+        @apply max-w-3xl m-auto;
+    }
+    
+    .meme-text {
+        text-shadow:
+            2px 2px 0 #000,
+            -2px -2px 0 #000,
+            2px -2px 0 #000,
+            -2px 2px 0 #000,
+            0 2px 0 #000,
+            2px 0 0 #000,
+            0 -2px 0 #000,
+            -2px 0 0 #000,
+            2px 2px 5px #000;
+    
+        @apply text-2xl min-sm:text-5xl text-light-400 font-bold;
+    }
+    
 }
 
-.text-input {
-    @apply border-1 rounded-md border-text-300 text-text-200 p-2 block w-full;
-}
-
-.wrapper {
-    @apply max-w-3xl m-auto;
-}
-
-.meme-text {
-    text-shadow:
-        2px 2px 0 #000,
-        -2px -2px 0 #000,
-        2px -2px 0 #000,
-        -2px 2px 0 #000,
-        0 2px 0 #000,
-        2px 0 0 #000,
-        0 -2px 0 #000,
-        -2px 0 0 #000,
-        2px 2px 5px #000;
-
-    @apply text-2xl min-sm:text-5xl text-text-400 font-bold;
-}
