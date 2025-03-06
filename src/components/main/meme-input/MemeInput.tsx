@@ -1,13 +1,17 @@
+import { MemeData } from "../../../scripts/types";
+
 interface MemeInputProps {
   onTopTextChanged: (text: string) => void;
   onBottomTextChanged: (text: string) => void;
   onNewImageRequested: () => void;
+  memeData: MemeData
 }
 
 export default ({
   onTopTextChanged,
   onBottomTextChanged,
   onNewImageRequested,
+  memeData
 }: MemeInputProps) => {
   return (
     <div className="flex flex-col gap-10">
@@ -19,7 +23,7 @@ export default ({
             type="text"
             id="top-text"
             name="topText"
-            placeholder="ONE DOES NOT SIMPLY"
+            value={memeData.topText}
             onChange={(e) => onTopTextChanged(e.currentTarget.value)}
           />
         </div>
@@ -30,7 +34,7 @@ export default ({
             type="text"
             id="bottom-text"
             name="bottomText"
-            placeholder="WALK INTO MORDOR"
+            value={memeData.bottomText}
             onChange={(e) => onBottomTextChanged(e.currentTarget.value)}
           />
         </div>

@@ -30,6 +30,7 @@ export default () => {
           onTopTextChanged={handleTopTextChanged}
           onBottomTextChanged={handleBottomTextChanged}
           onNewImageRequested={handleNewImageRequested}
+          memeData={memeData}
         />
         <MemeDisplay data={memeData} />
       </div>
