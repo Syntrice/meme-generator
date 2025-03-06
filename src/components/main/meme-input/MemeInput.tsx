@@ -11,7 +11,7 @@ export default () => {
                     <input className="text-input" type="text" id="bottom-text" name="bottomText" placeholder="And take my money" />
                 </div>
             </div>
-            <button className="block w-full p-5 rounded-md gradient text-light-400"><b>Get a new meme image 🖼️</b></button>
+            <button className="block w-full p-5 rounded-md gradient hover:gradient-dark text-light-400"><b>Get a new meme image 🖼️</b></button>
         </div>
     )
 }
