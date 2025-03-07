@@ -28,7 +28,8 @@ export default () => {
   }
 
   function handleNewImageRequested() {
-    console.log("New image requested")
+    const randomNumber = Math.floor(Math.random() * memeImages.current.length)
+    setMemeData(prev => {return {...prev, imageUrl: memeImages.current[randomNumber]}})
   }
 
   return (
