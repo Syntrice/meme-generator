@@ -1,7 +1,7 @@
 import { MemeData } from "../../scripts/types";
 import MemeDisplay from "./meme-display/MemeDisplay";
 import MemeInput from "./meme-input/MemeInput";
-import React, { useState } from "react";
+import { useState, useEffect , useRef} from "react";
 
 export default () => {
   const [memeData, setMemeData] = useState<MemeData>({
@@ -9,6 +9,14 @@ export default () => {
     topText: "ONE DOES NOT SIMPLY",
     bottomText: "WALK INTO MORDOR",
   });
+
+  const memeImages = useRef<string[]>([])
+
+  useEffect(() => {
+    fetch("https://api.imgflip.com/get_memes")
+    .then(response => response.json())
+    .then(data => memeImages.current = data.data.memes.map((i: { url: string; }) => i.url))
+  },[])
 
   function handleTopTextChanged(text: string) {
     setMemeData(prev => {return {...prev, topText: text}})
