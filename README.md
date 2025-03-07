@@ -1,54 +1,45 @@
-# React + TypeScript + Vite
+# Meme Generator
+![image](https://github.com/user-attachments/assets/b033f89e-dcbe-4a11-bedc-a8ca353b1a39)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About
 
-Currently, two official plugins are available:
+A small project to build a meme generator using React. Completed as part of a Scrimba course. It is deployed on Netlify - you can view the live demo deployment [here](https://app.syntrice.com/meme-generator).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies
 
-## Expanding the ESLint configuration
+- **Language:** TypeScript, HTML, CSS
+- **Libraries:** React, Vite, Tailwind CSS
+- **APIs:** [Imgflip API](https://imgflip.com/api)
+- **Deployment:** Netlify
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Setup
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+You will need to have [Node.js and NPM](https://nodejs.org/en) installed before carrying out these steps.
+
+1. Clone the repository
+
+```bash
+git clone "https://github.com/Syntrice/chef-bot.git"
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Navigate to repository root
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```powershell
+cd "./chef-bot"
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+3. Restore dependencies
+
+```powershell
+npm install
+```
+
+4. Run dev server or build project
+
+```powershell
+npm run dev
+```
+
+```powershell
+npm run build
 ```
